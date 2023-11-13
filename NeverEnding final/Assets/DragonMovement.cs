@@ -6,13 +6,50 @@ public class DragonMovement : MonoBehaviour
 {
     public Rigidbody dragon;
 
-    private Vector3 force = new Vector3(0, 0, 500);
+   // private Vector3 force = new Vector3(0, 0, 1000);
+    
+    private bool moveLeft;
+    private bool moveRight;
     // Start is called before the first frame update
-    void Start()
-    {
-        dragon.AddForce(force);
-    }
+    // void Start()
+    // {
+    //     dragon.AddForce(force);
+    // }
 
-    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveLeft = true;
+        }
+        else
+        {
+            moveLeft = false;
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveRight = true;
+        }
+        else
+        {
+            moveRight = false;
+        }
+    }
+    
+    private void FixedUpdate()
+    {
+        dragon.AddForce(0,0,800 * Time.deltaTime);
+        
+        if(moveLeft)
+        {
+            dragon.AddForce(-500 * Time.deltaTime, 0, 0);
+        }
+        
+        if (moveRight)
+        {
+            dragon.AddForce(500 * Time.deltaTime, 0, 0);
+        }
+    }
    
 }
