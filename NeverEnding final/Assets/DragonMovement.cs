@@ -39,16 +39,16 @@ public class DragonMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        dragon.AddForce(0,0,800 * Time.deltaTime);
+        dragon.AddForce(0,0,400 * Time.deltaTime);
         
         if(moveLeft)
         {
-            dragon.AddForce(-500 * Time.deltaTime, 0, 0);
+            dragon.AddForce(-300 * Time.deltaTime, 0, 0);
         }
         
         if (moveRight)
         {
-            dragon.AddForce(500 * Time.deltaTime, 0, 0);
+            dragon.AddForce(300 * Time.deltaTime, 0, 0);
         }
     }
    
