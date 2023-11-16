@@ -10,7 +10,7 @@ public class messageRespiration : MonoBehaviour
    
     void Start()
     {
-        textField.text = "Respira a ritmo con la sfera";
+        textField.text = "Breath according to sphere size";
     }
     
 }
