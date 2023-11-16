@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Moneta
+  - Interactable
+  - wordContainer
+  - retrieved
+  - obstacle
+  - speakable
   layers:
   - Default
   - TransparentFX
