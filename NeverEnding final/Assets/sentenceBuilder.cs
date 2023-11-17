@@ -10,6 +10,7 @@ public class SentenceBuilder : MonoBehaviour
     public Dropdown subjectDropdown;
     public Dropdown verbDropdown;
     public Dropdown objectDropdown;
+    public Canvas sentenceCanvas;
     public Text resultText;
 
     // Define arrays of predefined word choices for each part of the sentence
@@ -19,6 +20,7 @@ public class SentenceBuilder : MonoBehaviour
 
     void Start()
     {
+        sentenceCanvas.enabled = false;
         // Populate Dropdown options with predefined choices
         subjectDropdown.AddOptions(new List<Dropdown.OptionData>(subjects.Select(s => new Dropdown.OptionData(s))));
         verbDropdown.AddOptions(new List<Dropdown.OptionData>(verbs.Select(v => new Dropdown.OptionData(v))));

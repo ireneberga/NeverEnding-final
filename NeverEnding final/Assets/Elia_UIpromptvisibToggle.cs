@@ -11,10 +11,11 @@ public class InteractionPrompt : MonoBehaviour
     public TextMeshProUGUI cornerText;
     public TextMeshProUGUI middleText;
     private string current_message = "";
+    public Canvas sentenceCanvas;
     private void Start()
     {
         ShowPrompt("");
-        wordsToFind = new string[] { "Speranza", "Felicità", "Allegria" };
+        wordsToFind = new string[] { "WordDepression1", "WordDepression2", "WordDepression3" };
         wordsFound = 0;
         RectTransform rectTransform = cornerText.GetComponentInChildren<RectTransform>();
 
@@ -55,6 +56,14 @@ public class InteractionPrompt : MonoBehaviour
             else if (hit.collider.CompareTag("speakable"))
             {
                 ShowPrompt("Press E to speak!");
+                if (Input.GetKey(activateKey))
+                { 
+                    hit.collider.gameObject.tag = "Untagged";
+                    sentenceCanvas.enabled = true;
+                    GameManager.instance.gameMode = 0;
+                    Cursor.lockState = CursorLockMode.None;
+
+                }
             }
             else
             {
