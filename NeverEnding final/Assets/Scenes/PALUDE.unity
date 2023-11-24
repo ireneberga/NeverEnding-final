@@ -4581,22 +4581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1784217010
-MonoBehaviour:
-=======
   subjectDropdown: {fileID: 0}
   verbDropdown: {fileID: 0}
   objectDropdown: {fileID: 0}
   resultText: {fileID: 0}
 --- !u!4 &1860171336
 Transform:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
