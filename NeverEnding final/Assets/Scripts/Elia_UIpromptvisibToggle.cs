@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
@@ -11,21 +12,24 @@ public class InteractionPrompt : MonoBehaviour
     public TextMeshProUGUI cornerText;
     public TextMeshProUGUI middleText;
     private string current_message = "";
-    public Canvas sentenceCanvas;
+    public TMP_Dropdown drop1;
+    public TMP_Dropdown drop2;
+    public TMP_Dropdown drop3;
     private void Start()
     {
         ShowPrompt("");
         wordsToFind = new string[] { "WordDepression1", "WordDepression2", "WordDepression3" };
         wordsFound = 0;
-        RectTransform rectTransform = cornerText.GetComponentInChildren<RectTransform>();
+        drop1.ClearOptions();
+        drop1.AddOptions(new List<string>(wordsToFind));
+        drop1.gameObject.SetActive(false);
+        drop2.ClearOptions();
+        drop2.AddOptions(new List<string>(wordsToFind));
+        drop2.gameObject.SetActive(false);
+        drop3.ClearOptions();
+        drop3.AddOptions(new List<string>(wordsToFind));
+        drop3.gameObject.SetActive(false);
 
-        // Imposta l'ancoraggio nell'angolo in basso a sinistra
-        rectTransform.anchorMin = new Vector2(0, 0);
-        rectTransform.anchorMax = new Vector2(0, 0);
-
-        // Imposta la posizione in base al pivot (0, 0 rappresenta l'angolo in basso a sinistra)
-        rectTransform.anchoredPosition = new Vector2(0, 0);
-        
     }
         private void Update()
     {
@@ -57,11 +61,23 @@ public class InteractionPrompt : MonoBehaviour
             {
                 ShowPrompt("Press E to speak!");
                 if (Input.GetKey(activateKey))
-                { 
-                    hit.collider.gameObject.tag = "Untagged";
-                    sentenceCanvas.enabled = true;
-                    GameManager.instance.gameMode = 0;
-                    Cursor.lockState = CursorLockMode.None;
+                {
+                    if (wordsFound == 3)
+                    {
+                        hit.collider.gameObject.tag = "Untagged";
+                        drop1.gameObject.SetActive(true);
+                        drop2.gameObject.SetActive(true);
+                        drop3.gameObject.SetActive(true);
+                        cornerText.gameObject.SetActive(false);
+                        middleText.gameObject.SetActive(false);
+                        Cursor.visible = true;
+                        //Cursor.lockState = CursorLockMode.None;
+                    }
+                    else
+                    {
+                        ShowPrompt("You need to find more words!");
+                    }
+
 
                 }
             }
@@ -79,12 +95,18 @@ public class InteractionPrompt : MonoBehaviour
 
     void ShowPrompt(string message)
     {
-        middleText.text = message;
+        if (middleText != null && middleText.gameObject.activeSelf)
+        {
+            middleText.text = message;
+        }
     }
     void UpdateWordsFound(string message)
     {
-        current_message = current_message + "\n" + message;
-        cornerText.text = current_message;
+        if (cornerText != null && cornerText.gameObject.activeSelf)
+        {
+            current_message = current_message + "\n" + message;
+            cornerText.text = current_message;
+        }
     }
 }
 

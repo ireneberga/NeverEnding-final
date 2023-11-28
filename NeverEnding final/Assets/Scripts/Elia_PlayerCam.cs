@@ -39,11 +39,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Android;
+
 public class PlayerCam : MonoBehaviour
 {
     public float sensX;
     public float sensY;
-
     public Transform orientation;
     //public Canvas sentenceCanvas
     float xRotation;
@@ -57,20 +58,6 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.gameMode == 0)
-        {
-            // Free 1st person gameplay
-            HandleFreeGameplay();
-        }
-        else if (GameManager.instance.gameMode == 1)
-        {
-            // UI interactions
-            HandleUIInteractions();
-        }
-    }
-
-    private void HandleFreeGameplay()
-    {
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
         YRotation += mouseX;
@@ -82,11 +69,5 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, YRotation, 0);
         float yRotation = transform.rotation.eulerAngles.y;
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-    }
-
-    private void HandleUIInteractions()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 }
