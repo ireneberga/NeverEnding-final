@@ -1,8 +1,8 @@
-using System;
+
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+using System.Collections;
+
 
 public class messageRespiration : MonoBehaviour
 {
@@ -10,7 +10,14 @@ public class messageRespiration : MonoBehaviour
    
     void Start()
     {
-        textField.text = "Breath according to sphere size";
+        textField.text = "Breath according to sphere size and try to follow the Up and Down movement with the arrows of you keyboard";
+        StartCoroutine(CancellaMessaggio());
+    }
+    
+    IEnumerator CancellaMessaggio()
+    {
+        yield return new WaitForSeconds(9f);
+        textField.text = "";
     }
     
 }
