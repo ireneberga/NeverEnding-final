@@ -13,6 +13,7 @@ public class loadScene : MonoBehaviour
         // audioListener = audioGameObject.GetComponent<AudioSource>();
         // CharacterMovement.active = true;
         // AudioListener.volume = 0.7f;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(4);
         
         

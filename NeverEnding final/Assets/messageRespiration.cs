@@ -10,7 +10,7 @@ public class messageRespiration : MonoBehaviour
    
     void Start()
     {
-        textField.text = "Breath according to sphere size and try to follow the Up and Down movement with the arrows of you keyboard";
+        textField.text = "Breath according to the cloud size and try to follow the Up and Down movement with the arrows of you keyboard";
         StartCoroutine(CancellaMessaggio());
     }
     

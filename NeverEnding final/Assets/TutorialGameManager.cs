@@ -4,15 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class TutorialGameManager : MonoBehaviour
 {
-    string mostro2 = "medium anxia";
+    public static string mostro1 = " anxia";
     public GameObject heart1, heart2, heart3, layer1, layer2, layer3;
     public GameObject gameOver;
     // public GameObject audioGameObject;
     // private AudioSource audioListener;
 
-    public Text textField;
+  
 
     public static int health;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         
        
 
-        if (mostro2 == "big anxia")
+        if (mostro1 == "big anxia")
         {
             TranslateObject(heart1);
             TranslateObject(heart2);
@@ -65,17 +65,14 @@ public class GameManager : MonoBehaviour
                 heart1.gameObject.SetActive(false);
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
-                if (mostro2 == "big anxia")
-                {
-                    gameOver.gameObject.SetActive(true);
-                    // AudioListener.volume = 0.0f;
-                    // CharacterMovement.active = false;
-                    // textField.text = "";
-                    Time.timeScale = 0f;
-                }
-
-
-
+                gameOver.gameObject.SetActive(true); 
+                // AudioListener.volume = 0.0f;
+                // CharacterMovement.active = false;
+                // textField.text = "";
+                Time.timeScale = 0f;
+                
+            
+                
                 break;
         }
         
@@ -97,3 +94,4 @@ public class GameManager : MonoBehaviour
    
     
 }
+

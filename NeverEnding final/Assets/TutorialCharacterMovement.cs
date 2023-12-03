@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class CharacterMovement : MonoBehaviour
+public class TutorialCharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public float amplitude = 0.6f;
@@ -12,7 +13,7 @@ public class CharacterMovement : MonoBehaviour
     private bool flagerroredown = false; 
     private bool flagerroreup = false; 
     private bool flagwarn = false;
-    public static bool active = true;
+    public static bool active = false;
     private float tempoPremuto = 0f; // Tempo attuale che la freccia è stata premuta
     private float tempoNonPremuto = 0f;
     private float tempoWarning = 0f;
@@ -21,11 +22,18 @@ public class CharacterMovement : MonoBehaviour
     private int opposto2 = 0;
     public Text textField;
     public Text breathText;
+    public Text tutorialText;
+    private List<string>  speechLines;
+    
 
+    void Start()
+    {
+        tutorialText.text = "This is a tutorial to help you understand how to use controls commands in the following game";
+    }
    
         void Update()
         {
-            //if(active){
+            if(active){
                 if (mostro2 == "big anxia" | mostro2 == "medium anxia" | mostro2 == "small anxia")
                 {
                     // Calcola il movimento in avanti lungo l'asse Z
@@ -49,13 +57,13 @@ public class CharacterMovement : MonoBehaviour
 
                     // Passa l'offset Y e il periodo alla classe CoinGenerator
                     //CoinGenerator.SetCharacterYOffsetAndPeriod(yOffset, period);
-               // }
+                }
             }
             
-            if (mostro2 == "medium anxia" | mostro2 == "big anxia")
-            {
-               Controllopressione();
-            }
+             if (mostro2 == "big anxia" | mostro2 == "medium anxia")
+             {
+                Controllopressione();
+             }
         }
         
         private void Controllopressione()
@@ -180,16 +188,19 @@ public class CharacterMovement : MonoBehaviour
 
                 if (flagwarn)
                 {
-                    StartCoroutine(CancellaMessaggio());
-                    flagwarn = false;
+                     StartCoroutine(CancellaMessaggio());
+                     flagwarn = false;
                 }
+                
+                
         }
         
-        IEnumerator CancellaMessaggio()
-        {
-            yield return new WaitForSeconds(2f);
-            textField.text = "";
-        }
+         IEnumerator CancellaMessaggio()
+         {
+             yield return new WaitForSeconds(2f);
+             textField.text = "";
+         }
 }
+
 
 
