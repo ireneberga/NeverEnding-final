@@ -1,0 +1,11 @@
+Model Information:
+* title:	Frog (Low-Poly) + Animation
+* source:	https://sketchfab.com/3d-models/frog-low-poly-animation-e162d0ecfe6e42f5a3afc4e0893bc560
+* author:	Norah van Nimwegen (https://sketchfab.com/NorahvanNimwegen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Frog (Low-Poly) + Animation" (https://sketchfab.com/3d-models/frog-low-poly-animation-e162d0ecfe6e42f5a3afc4e0893bc560) by Norah van Nimwegen (https://sketchfab.com/NorahvanNimwegen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

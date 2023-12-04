@@ -1,0 +1,11 @@
+Model Information:
+* title:	Water lily
+* source:	https://sketchfab.com/3d-models/water-lily-04dd636204cd4b0db45a4fc82efa4385
+* author:	Mariia Melnik (https://sketchfab.com/MariiaMelnik)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Water lily" (https://sketchfab.com/3d-models/water-lily-04dd636204cd4b0db45a4fc82efa4385) by Mariia Melnik (https://sketchfab.com/MariiaMelnik) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

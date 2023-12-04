@@ -1,0 +1,11 @@
+Model Information:
+* title:	Swamp House
+* source:	https://sketchfab.com/3d-models/swamp-house-aa5b05bfd8ec452393674e820fd9f9f0
+* author:	AsterOmice (https://sketchfab.com/johnalejandro_13)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Swamp House" (https://sketchfab.com/3d-models/swamp-house-aa5b05bfd8ec452393674e820fd9f9f0) by AsterOmice (https://sketchfab.com/johnalejandro_13) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

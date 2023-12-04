@@ -1,0 +1,11 @@
+Model Information:
+* title:	Swamp Balloon Boy Idle
+* source:	https://sketchfab.com/3d-models/swamp-balloon-boy-idle-429d8e02b0644c589f948cd46a4b6ed8
+* author:	OrangeSauceu (https://sketchfab.com/orangesauceu)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Swamp Balloon Boy Idle" (https://sketchfab.com/3d-models/swamp-balloon-boy-idle-429d8e02b0644c589f948cd46a4b6ed8) by OrangeSauceu (https://sketchfab.com/orangesauceu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
