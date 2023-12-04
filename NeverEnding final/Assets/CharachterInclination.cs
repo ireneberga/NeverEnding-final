@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
     public float amplitude = 0.6f;
     public float period = 12f; // Periodo di 11.6 secondi
     //string mostro2 = PlayerPrefs.GetInt("mostro2", mostro2); 
-    string mostro2 = "medium anxia";
+    string mostro2 = "small anxia";
     private bool flagerroredown = false; 
     private bool flagerroreup = false; 
     private bool flagwarn = false;
@@ -52,7 +52,7 @@ public class CharacterMovement : MonoBehaviour
                // }
             }
             
-            if (mostro2 == "medium anxia" | mostro2 == "big anxia")
+            if (mostro2 == "medium anxia" | mostro2 == "small anxia")
             {
                Controllopressione();
             }

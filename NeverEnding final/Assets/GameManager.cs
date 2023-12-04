@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    string mostro2 = "medium anxia";
+    string mostro2 = "small anxia";
     public GameObject heart1, heart2, heart3, layer1, layer2, layer3;
     public GameObject gameOver;
     // public GameObject audioGameObject;
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         
        
 
-        if (mostro2 == "big anxia")
+        if (mostro2 == "small anxia")
         {
             TranslateObject(heart1);
             TranslateObject(heart2);
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
                 heart1.gameObject.SetActive(false);
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
-                if (mostro2 == "big anxia")
+                if (mostro2 == "small anxia")
                 {
                     gameOver.gameObject.SetActive(true);
                     // AudioListener.volume = 0.0f;
