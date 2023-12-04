@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         readyToJump = true;
         startYScale = transform.localScale.y;
+        //SetPlayerPosition();
     }
 
     private void Update()
@@ -155,4 +156,18 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
+    /*private void SetPlayerPosition()
+    {
+        // Adjust the player's position based on the bool value
+        if (GameData.wordsCollected)
+        {
+            // Set player position for position A
+            transform.position = new Vector3(602, 105, 1082);
+        }
+        else
+        {
+            // Set player position for position B
+            transform.position = new Vector3(596, 102, 1130);
+        }
+    }*/
 }

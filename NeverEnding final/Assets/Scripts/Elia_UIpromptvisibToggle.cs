@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionPrompt : MonoBehaviour
 {
@@ -12,24 +13,30 @@ public class InteractionPrompt : MonoBehaviour
     public TextMeshProUGUI cornerText;
     public TextMeshProUGUI middleText;
     private string current_message = "";
-    public TMP_Dropdown drop1;
-    public TMP_Dropdown drop2;
-    public TMP_Dropdown drop3;
+    public GameObject Cube;
+    public GameObject flower1;
+    public GameObject flower2;
+    public GameObject flower3;
+    public GameObject WordsNPC;
+    public GameObject Player;
+    //public TMP_Dropdown drop1;
+    //public TMP_Dropdown drop2;
+    //public TMP_Dropdown drop3;
     private void Start()
     {
         ShowPrompt("");
-        wordsToFind = new string[] { "WordDepression1", "WordDepression2", "WordDepression3" };
+        wordsToFind = new string[] { "Resilience", "Determination", "Habits" };
         wordsFound = 0;
-        drop1.ClearOptions();
-        drop1.AddOptions(new List<string>(wordsToFind));
-        drop1.gameObject.SetActive(false);
-        drop2.ClearOptions();
-        drop2.AddOptions(new List<string>(wordsToFind));
-        drop2.gameObject.SetActive(false);
-        drop3.ClearOptions();
-        drop3.AddOptions(new List<string>(wordsToFind));
-        drop3.gameObject.SetActive(false);
-
+        if (GameData.wordsCollected)
+        {
+            Cube.SetActive(false);
+            Player.transform.position = new Vector3(602, 105, 1082);
+            flower1.tag = "retrieved";
+            flower2.tag = "retrieved";
+            flower3.tag = "retrieved";
+            WordsNPC.tag = "Untagged";
+        }
+      
     }
         private void Update()
     {
@@ -65,12 +72,14 @@ public class InteractionPrompt : MonoBehaviour
                     if (wordsFound == 3)
                     {
                         hit.collider.gameObject.tag = "Untagged";
-                        drop1.gameObject.SetActive(true);
-                        drop2.gameObject.SetActive(true);
-                        drop3.gameObject.SetActive(true);
+                        //drop1.gameObject.SetActive(true);
+                        //drop2.gameObject.SetActive(true);
+                        //drop3.gameObject.SetActive(true);
                         cornerText.gameObject.SetActive(false);
                         middleText.gameObject.SetActive(false);
-                        Cursor.visible = true;
+                        GameData.wordsCollected = true;
+                        SceneManager.LoadScene("make_sentence", LoadSceneMode.Single);
+                        //Cursor.visible = true;
                         //Cursor.lockState = CursorLockMode.None;
                     }
                     else
@@ -108,5 +117,6 @@ public class InteractionPrompt : MonoBehaviour
             cornerText.text = current_message;
         }
     }
+
 }
 
